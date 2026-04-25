@@ -1,8 +1,6 @@
 # FoxESS - Modbus
 
-[![GitHub Release][releases-shield]][releases]
-[![BuyMeCoffee][buymecoffeebadge]][buymecoffee]
-[![Community Forum][forum-shield]][forum]
+[![GitHub Release][my_releases]][nathanmarlor_releases]
 
 \*\* **This project is not endorsed by, directly affiliated with, maintained, authorized, or sponsored by FoxESS** \*\*
 
@@ -90,12 +88,5 @@ Sets all charge periods in one service call. The service "Update Charge Period" 
 ![Service](images/svc-charge-2.png)
 
 ---
-
-[buymecoffee]: https://www.buymeacoffee.com/nathanmarlor
-[buymecoffeebadge]: https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg?style=for-the-badge
-[hacs]: https://hacs.xyz
-[my-hacs]: https://my.home-assistant.io/redirect/hacs_repository/?owner=nathanmarlor&repository=foxess_modbus&category=integration
-[forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg?style=for-the-badge
-[forum]: https://community.home-assistant.io/
-[releases-shield]: https://img.shields.io/github/release/nathanmarlor/foxess_modbus.svg?style=for-the-badge
-[releases]: https://github.com/nathanmarlor/foxess_modbus/releases
+[my_releases]: https://github.com/spiderjuka/foxess_modbus_custom/releases
+[nathanmarlor_releases]: https://github.com/nathanmarlor/foxess_modbus/releases
