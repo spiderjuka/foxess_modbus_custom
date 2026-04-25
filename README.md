@@ -1,6 +1,6 @@
 # FoxESS - Modbus
 
-[![GitHub Release][my_releases]][nathanmarlor_releases]
+[![GitHub Release][releases-shield]][releases]
 
 \*\* **This project is not endorsed by, directly affiliated with, maintained, authorized, or sponsored by FoxESS** \*\*
 
@@ -88,5 +88,5 @@ Sets all charge periods in one service call. The service "Update Charge Period" 
 ![Service](images/svc-charge-2.png)
 
 ---
-[my_releases]: https://github.com/spiderjuka/foxess_modbus_custom/releases
-[nathanmarlor_releases]: https://github.com/nathanmarlor/foxess_modbus/releases
+[releases-shield]: https://github.com/spiderjuka/foxess_modbus_custom/releases
+[releases]: https://github.com/nathanmarlor/foxess_modbus/releases
