@@ -40,10 +40,6 @@ See the documentation for details.
 
 ## Installation
 
-[![Quick installation link](https://my.home-assistant.io/badges/hacs_repository.svg)][my-hacs]
-
-Migrating from StealthChesnut's HA-FoxESS-Modbus? [Read this](https://github.com/nathanmarlor/foxess_modbus/wiki/Migrating-from-HA-FoxESS-Modbus).
-
 Recommended installation is through HACS: as custom repository.
 
 1. Navigate to HACS integration and:
