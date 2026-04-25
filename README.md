@@ -6,6 +6,8 @@
 
 ## Introduction
 
+This project is based on repository of "nathanmarlor", see https://github.com/nathanmarlor/foxess_modbus
+I made it compatible with my Foxess inverter P3-Smart what is fully compatible with H3-Smart.
 A Home Assistant custom component which communicates with FoxESS H-series inverters and derivatives without using FoxESS's cloud.
 
 This means that you're not reliant on FoxESS's cloud infrastructure, so HA keeps working when the cloud goes down.
@@ -90,3 +92,5 @@ Sets all charge periods in one service call. The service "Update Charge Period" 
 ---
 [releases-shield]: https://img.shields.io/github/release/spiderjuka/foxess_modbus_custom.svg?style=for-the-badge
 [releases]: https://github.com/spiderjuka/foxess_modbus_custom/releases
+[hacs]: https://hacs.xyz
+[my-hacs]: https://my.home-assistant.io/redirect/hacs_repository/?owner=nathanmarlor&repository=foxess_modbus&category=integration
