@@ -6,7 +6,7 @@
 
 ## Introduction
 
-This project is based on repository of "nathanmarlor", see https://github.com/nathanmarlor/foxess_modbus
+This project is based on repository of "nathanmarlor", see https://github.com/nathanmarlor/foxess_modbus.
 I made it compatible with my Foxess inverter P3-Smart what is fully compatible with H3-Smart.
 A Home Assistant custom component which communicates with FoxESS H-series inverters and derivatives without using FoxESS's cloud.
 
@@ -44,16 +44,18 @@ See the documentation for details.
 
 Migrating from StealthChesnut's HA-FoxESS-Modbus? [Read this](https://github.com/nathanmarlor/foxess_modbus/wiki/Migrating-from-HA-FoxESS-Modbus).
 
-Recommended installation is through [HACS][hacs]:
+Recommended installation is through HACS: as custom repository.
 
-1. Either [use this link][my-hacs], or navigate to HACS integration and:
-   - 'Explore & Download Repositories'
-   - Search for 'FoxESS - Modbus'
-   - Download
-2. Restart Home Assistant
-3. Go to Settings > Devices and Services > Add Integration
-4. Search for and select 'FoxESS - Modbus' (If the integration is not found, empty your browser cache and reload the page)
-5. Proceed with the configuration
+1. Navigate to HACS integration and:
+2. Click on the 3 dots in the top right corner.
+3. Select "Custom repositories"
+4. Add the URL to the repository.
+5. Select the correct type.
+6. Click the "ADD" button.
+7. Restart Home Assistant
+8. Go to Settings > Devices and Services > Add Integration
+9. Search for and select 'FoxESS - Modbus' (If the integration is not found, empty your browser cache and reload the page)
+10. Proceed with the configuration
 
 ## Usage
 
@@ -68,5 +70,3 @@ Recommended installation is through [HACS][hacs]:
 ---
 [releases-shield]: https://img.shields.io/github/release/spiderjuka/foxess_modbus_custom.svg?style=for-the-badge
 [releases]: https://github.com/spiderjuka/foxess_modbus_custom/releases
-[hacs]: https://hacs.xyz
-[my-hacs]: https://my.home-assistant.io/redirect/hacs_repository/?owner=nathanmarlor&repository=foxess_modbus&category=integration
