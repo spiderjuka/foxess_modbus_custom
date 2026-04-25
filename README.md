@@ -88,5 +88,5 @@ Sets all charge periods in one service call. The service "Update Charge Period" 
 ![Service](images/svc-charge-2.png)
 
 ---
-[releases-shield]: https://github.com/spiderjuka/foxess_modbus_custom/releases
-[releases]: https://github.com/nathanmarlor/foxess_modbus/releases
+[releases-shield]: https://img.shields.io/github/release/spiderjuka/foxess_modbus_custom.svg?style=for-the-badge
+[releases]: https://github.com/spiderjuka/foxess_modbus_custom/releases
