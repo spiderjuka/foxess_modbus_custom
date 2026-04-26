@@ -339,7 +339,7 @@ _INVERTER_PROFILES_LIST = [
         special_registers=KH_REGISTERS,
     ),
     # H3-Smart has to appear before H3
-    InverterModelProfile(InverterModel.H3_SMART, r"^H3-([\d\.]+)-Smart").add_connection_type(
+    InverterModelProfile(InverterModel.H3_SMART, r"^P3-([\d\.]+)-SH").add_connection_type(
         ConnectionType.AUX,
         RegisterType.HOLDING,
         versions={None: Inv.H3_SMART},

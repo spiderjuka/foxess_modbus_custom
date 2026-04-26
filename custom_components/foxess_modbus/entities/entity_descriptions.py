@@ -560,7 +560,7 @@ def _h1_current_voltage_power_entities() -> Iterable[EntityFactory]:
         validate=[Range(-100, 100)],
     )
     yield ModbusSensorDescription(
-        key="rpower_Q",
+        key="rpower_q",
         addresses=[
             ModbusAddressesSpec(input=[11012], models=Inv.H1_G1 | Inv.KH_PRE119),
         ],
@@ -577,7 +577,7 @@ def _h1_current_voltage_power_entities() -> Iterable[EntityFactory]:
         validate=[Range(-100, 100)],
     )
     yield ModbusSensorDescription(
-        key="rpower_S",
+        key="rpower_s",
         addresses=[
             ModbusAddressesSpec(input=[11013], models=Inv.H1_G1 | Inv.KH_PRE119),
         ],
@@ -647,7 +647,7 @@ def _h1_current_voltage_power_entities() -> Iterable[EntityFactory]:
         validate=[Range(0, 100)],
     )
     yield ModbusSensorDescription(
-        key="eps_rpower_Q",
+        key="eps_rpower_q",
         addresses=[
             ModbusAddressesSpec(input=[11018], models=Inv.H1_G1 | Inv.KH_PRE119),
         ],
@@ -664,7 +664,7 @@ def _h1_current_voltage_power_entities() -> Iterable[EntityFactory]:
         validate=[Range(0, 100)],
     )
     yield ModbusSensorDescription(
-        key="eps_rpower_S",
+        key="eps_rpower_s",
         addresses=[
             ModbusAddressesSpec(input=[11019], models=Inv.H1_G1 | Inv.KH_PRE119),
         ],
@@ -773,7 +773,7 @@ def _h1_current_voltage_power_entities() -> Iterable[EntityFactory]:
 def _h3_current_voltage_power_entities() -> Iterable[EntityFactory]:
     def _grid_voltage(phase: str, addresses: list[ModbusAddressesSpec]) -> EntityFactory:
         return ModbusSensorDescription(
-            key=f"grid_voltage_{phase}",
+            key=f"grid_voltage_{phase.lower()}",
             addresses=addresses,
             entity_registry_enabled_default=False,
             name=f"Grid Voltage {phase}",
@@ -810,7 +810,7 @@ def _h3_current_voltage_power_entities() -> Iterable[EntityFactory]:
 
     def _inv_current(phase: str, addresses: list[ModbusAddressesSpec], scale: float) -> EntityFactory:
         return ModbusSensorDescription(
-            key=f"inv_current_{phase}",
+            key=f"inv_current_{phase.lower()}",
             addresses=addresses,
             name=f"Inverter Current {phase}",
             device_class=SensorDeviceClass.CURRENT,
@@ -846,7 +846,7 @@ def _h3_current_voltage_power_entities() -> Iterable[EntityFactory]:
     )
 
     def _inv_power(phase: str | None, addresses: list[ModbusAddressesSpec], scale: float) -> EntityFactory:
-        key_suffix = f"_{phase}" if phase is not None else ""
+        key_suffix = f"_{phase.lower()}" if phase is not None else ""
         name_suffix = f" {phase}" if phase is not None else ""
         return ModbusSensorDescription(
             key=f"inv_power{key_suffix}",
@@ -894,10 +894,10 @@ def _h3_current_voltage_power_entities() -> Iterable[EntityFactory]:
     )
 
     def _inv_power_reactive(phase: str | None, addresses: list[ModbusAddressesSpec]) -> EntityFactory:
-        key_suffix = f"_{phase}" if phase is not None else ""
+        key_suffix = f"_{phase.lower()}" if phase is not None else ""
         name_suffix = f" {phase}" if phase is not None else ""
         return ModbusSensorDescription(
-            key=f"inv_power_Q{key_suffix}",
+            key=f"inv_power_q{key_suffix}",
             addresses=addresses,
             entity_registry_enabled_default=False,
             name=f"Inverter Power (Reactive){name_suffix}",
@@ -926,10 +926,10 @@ def _h3_current_voltage_power_entities() -> Iterable[EntityFactory]:
     )
 
     def _inv_power_apparent(phase: str | None, addresses: list[ModbusAddressesSpec]) -> EntityFactory:
-        key_suffix = f"_{phase}" if phase is not None else ""
+        key_suffix = f"_{phase.lower()}" if phase is not None else ""
         name_suffix = f" {phase}" if phase is not None else ""
         return ModbusSensorDescription(
-            key=f"rpower_S{key_suffix}",
+            key=f"rpower_s{key_suffix}",
             addresses=addresses,
             entity_registry_enabled_default=False,
             name=f"Inverter Power (Apparent){name_suffix}",
@@ -956,7 +956,7 @@ def _h3_current_voltage_power_entities() -> Iterable[EntityFactory]:
 
     def _eps_rvolt(phase: str, addresses: list[ModbusAddressesSpec]) -> EntityFactory:
         return ModbusSensorDescription(
-            key=f"eps_rvolt_{phase}",
+            key=f"eps_rvolt_{phase.lower()}",
             addresses=addresses,
             entity_registry_enabled_default=False,
             name=f"EPS Voltage_{phase}",
@@ -975,7 +975,7 @@ def _h3_current_voltage_power_entities() -> Iterable[EntityFactory]:
 
     def _eps_rcurrent(phase: str, addresses: list[ModbusAddressesSpec]) -> EntityFactory:
         return ModbusSensorDescription(
-            key=f"eps_rcurrent_{phase}",
+            key=f"eps_rcurrent_{phase.lower()}",
             addresses=addresses,
             entity_registry_enabled_default=False,
             name=f"EPS Current {phase}",
@@ -999,7 +999,7 @@ def _h3_current_voltage_power_entities() -> Iterable[EntityFactory]:
 
     def _eps_power(phase: str, addresses: list[ModbusAddressesSpec]) -> EntityFactory:
         return ModbusSensorDescription(
-            key=f"eps_power_{phase}",
+            key=f"eps_power_{phase.lower()}",
             addresses=addresses,
             entity_registry_enabled_default=False,
             name=f"EPS Power {phase}",
@@ -1035,7 +1035,7 @@ def _h3_current_voltage_power_entities() -> Iterable[EntityFactory]:
     )
 
     def _grid_ct(phase: str | None, scale: float, addresses: list[ModbusAddressesSpec]) -> Iterable[EntityFactory]:
-        key_suffix = f"_{phase}" if phase is not None else ""
+        key_suffix = f"_{phase.lower()}" if phase is not None else ""
         name_suffix = f" {phase}" if phase is not None else ""
 
         yield ModbusSensorDescription(
@@ -1128,7 +1128,7 @@ def _h3_current_voltage_power_entities() -> Iterable[EntityFactory]:
     )
 
     def _grid_ct_reactive(phase: str | None, scale: float, addresses: list[ModbusAddressesSpec]) -> EntityFactory:
-        key_suffix = f"_{phase}" if phase is not None else ""
+        key_suffix = f"_{phase.lower()}" if phase is not None else ""
         name_suffix = f" {phase}" if phase is not None else ""
 
         return ModbusSensorDescription(
@@ -1167,7 +1167,7 @@ def _h3_current_voltage_power_entities() -> Iterable[EntityFactory]:
     )
 
     def _grid_ct_apparent(phase: str | None, scale: float, addresses: list[ModbusAddressesSpec]) -> EntityFactory:
-        key_suffix = f"_{phase}" if phase is not None else ""
+        key_suffix = f"_{phase.lower()}" if phase is not None else ""
         name_suffix = f" {phase}" if phase is not None else ""
 
         return ModbusSensorDescription(
@@ -1206,7 +1206,7 @@ def _h3_current_voltage_power_entities() -> Iterable[EntityFactory]:
     )
 
     def _grid_ct_power_factor(phase: str | None, scale: float, addresses: list[ModbusAddressesSpec]) -> EntityFactory:
-        key_suffix = f"_{phase}" if phase is not None else ""
+        key_suffix = f"_{phase.lower()}" if phase is not None else ""
         name_suffix = f" {phase}" if phase is not None else ""
 
         return ModbusSensorDescription(
@@ -1244,7 +1244,7 @@ def _h3_current_voltage_power_entities() -> Iterable[EntityFactory]:
     )
 
     def _ct2_meter(phase: str | None, scale: float, addresses: list[ModbusAddressesSpec]) -> ModbusSensorDescription:
-        key_suffix = f"_{phase}" if phase is not None else ""
+        key_suffix = f"_{phase.lower()}" if phase is not None else ""
         name_suffix = f" {phase}" if phase is not None else ""
 
         return ModbusSensorDescription(
@@ -1276,7 +1276,7 @@ def _h3_current_voltage_power_entities() -> Iterable[EntityFactory]:
     )
 
     def _load_power(phase: str | None, *, addresses: list[ModbusAddressesSpec]) -> EntityFactory:
-        key_suffix = f"_{phase}" if phase is not None else ""
+        key_suffix = f"_{phase.lower()}" if phase is not None else ""
         name_suffix = f" {phase}" if phase is not None else ""
         return ModbusSensorDescription(
             key=f"load_power{key_suffix}",
